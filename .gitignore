@@ -1,0 +1,40 @@
+# Go binaries and packages
+*.exe
+*.dll
+*.so
+*.dylib
+*.wasm
+*.obj
+*.o
+*.a
+*.lib
+*.test
+*.prof
+
+# Go module cache
+/go.mod
+/go.sum
+
+# Except for specific module files that should be tracked for specific sub-modules
+!*/go.mod
+!*/go.sum
+
+# Directories
+/bin/
+/pkg/
+/build/
+/vendor/
+
+# IDEs
+.idea/
+.vscode/
+.project
+.classpath
+.settings/
+.DS_Store
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
