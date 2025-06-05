@@ -15,25 +15,25 @@ type LogProducer interface {
 	Close() error
 }
 
-type KafkaProducer struct {
+type KProducer struct {
 	writer *kafka.Writer
 	topic  string
 }
 
-func NewKafkaProducer(Broker string, topic string) *KafkaProducer {
-	return &KafkaProducer{
-		writer: kafka.NewWriter(kafka.WriterConfig{
-			Brokers:      []string{Broker},
+func NewKafkaProducer(Broker string, topic string) *KProducer {
+	return &KProducer{
+		writer: &kafka.Writer{
+			Addr:         kafka.TCP(Broker),
 			Topic:        topic,
 			Balancer:     &kafka.LeastBytes{},
-			WriteTimeout: 10 * time.Second,
-			RequiredAcks: int(kafka.RequireOne),
-		}),
+			RequiredAcks: kafka.RequireOne,
+			WriteTimeout: 10 * time.Millisecond,
+		},
 		topic: topic,
 	}
 }
 
-func (p *KafkaProducer) Produce(entry domain.LogEntry) error {
+func (p *KProducer) Produce(entry domain.LogEntry) error {
 	data, err := json.Marshal(entry)
 	if err != nil {
 		return fmt.Errorf("error al serializar LogEntry: %w", err)
@@ -52,7 +52,7 @@ func (p *KafkaProducer) Produce(entry domain.LogEntry) error {
 	return nil
 }
 
-func (p *KafkaProducer) Close() error {
+func (p *KProducer) Close() error {
 	log.Println("Cerrando productor de Kafka...")
 	return p.writer.Close()
 }

@@ -41,7 +41,7 @@ func (lg *LogGenerator) Start() {
 				lg.generateAnomalyLogBurst()
 				lastAnomalyTime = time.Now()
 			} else {
-				lg.generateNomalLog()
+				lg.generateNormalLog()
 			}
 		}
 	}
@@ -51,7 +51,7 @@ func (lg *LogGenerator) Stop() {
 	close(lg.stopChan)
 }
 
-func (lg *LogGenerator) generateNomalLog() {
+func (lg *LogGenerator) generateNormalLog() {
 	logEntry := domain.LogEntry{
 		Timestamp: time.Now(),
 		Source:    getRandomSource(),
