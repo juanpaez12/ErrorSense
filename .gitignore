@@ -12,8 +12,8 @@
 *.prof
 
 # Go module cache
-/go.mod
-/go.sum
+/log-generator/go.mod
+/log-generator/go.sum
 
 # Except for specific module files that should be tracked for specific sub-modules
 !*/go.mod
