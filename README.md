@@ -29,7 +29,6 @@
 - [🔧 Variables de Entorno](#-configuración-de-variables-de-entorno)
 - [🚦 Estado del Proyecto](#-estado-del-proyecto)
 - [🤝 Contribuciones](#-contribuciones)
-- [📄 Licencia](#-licencia)
 
 ---
 
@@ -409,24 +408,7 @@ refactor(anomaly-processor): Extract detection algorithms
 test(integration): Add Kafka consumer tests
 ci: Add GitHub Actions workflow
 ```
-
-#### Tipos de Commits Utilizados
-- `feat:` Nueva funcionalidad
-- `fix:` Corrección de bugs
-- `docs:` Actualización de documentación
-- `refactor:` Refactorización sin cambios funcionales
-- `test:` Añadir o actualizar tests
-- `ci:` Cambios en CI/CD
-- `config:` Cambios de configuración
-
 ---
-
-## 📄 Licencia
-
-Este proyecto está bajo la licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
-
----
-
 <div align="center">
 
 **Construido con ❤️ usando Go, Kafka y Flutter**
