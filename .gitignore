@@ -11,6 +11,9 @@
 *.test
 *.prof
 
+# Environment variables
+.env
+
 # Go module cache
 /log-generator/go.mod
 /log-generator/go.sum
