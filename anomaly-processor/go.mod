@@ -1,4 +1,4 @@
-module ErrorSense/log-generator
+module ErrorSense/anomaly-processor
 
 go 1.24.0
 
@@ -8,6 +8,9 @@ require (
 )
 
 require (
+	ErrorSense/log-generator v0.0.0
 	github.com/klauspost/compress v1.18.0 // indirect
 	github.com/pierrec/lz4/v4 v4.1.22 // indirect
 )
+
+replace ErrorSense/log-generator => ../log-generator

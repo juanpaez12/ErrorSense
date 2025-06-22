@@ -13,9 +13,8 @@ import (
 )
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatalf("Error al cargar el archivo .env: %v", err)
+	if err := godotenv.Load(); err != nil {
+		log.Println("Error al cargar el archivo .env: %v", err)
 	}
 
 	kafkaBroker := os.Getenv("KAFKA_BROKER")
